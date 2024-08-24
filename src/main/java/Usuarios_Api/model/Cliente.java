@@ -21,7 +21,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "tb_clientes")
-public class Cliente extends Usuario {
+public class Cliente {
 
     
     @Id
@@ -34,6 +34,9 @@ public class Cliente extends Usuario {
     @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(nullable = false)
     private LocalDate dataNascimento;
+
+    @Embedded
+    private Usuario usuario;
 
     @Embedded
     private Endereco endereco;
