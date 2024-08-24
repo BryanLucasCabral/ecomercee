@@ -16,10 +16,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity(name = "tb_fornecedores")
-public class Fornecedor extends Usuario {
+public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Embedded
+    private Usuario usuario;
 
     @Column(nullable = false, unique = true)
     private String razaoSocial;
