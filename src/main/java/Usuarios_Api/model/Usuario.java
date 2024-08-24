@@ -1,15 +1,13 @@
 package Usuarios_Api.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
 @Data
 @AllArgsConstructor
-@Embeddable
-public class Usuario {
+public abstract class Usuario {
 
     @Column(nullable = false, length = 150)
     private String nome;
