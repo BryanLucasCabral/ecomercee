@@ -3,10 +3,9 @@ package Usuarios_Api.model;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Usuario {
 
@@ -32,4 +31,10 @@ public class Usuario {
 
     @Column(nullable = false)
     private Boolean usuarioExterno;
+
+    public Usuario(){
+        this.administrador = Boolean.FALSE;
+        this.colaborador = Boolean.FALSE;
+        this.usuarioExterno = Boolean.TRUE;
+    }
 }
